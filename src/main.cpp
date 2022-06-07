@@ -19,8 +19,14 @@ int main(int, char**) {
         {"Exercise2", vector<Muscle>({muscles[0]})}
     });
 
+    cout << "Unused muscles: " << endl;
     vector<Muscle> unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
     for(vector<Muscle>::iterator it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
+        cout << it->name << endl;
+
+    cout << "\nUsed muscles: " << endl;
+    vector<Muscle> usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
+    for(vector<Muscle>::iterator it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
         cout << it->name << endl;
 
     return EXIT_SUCCESS;
