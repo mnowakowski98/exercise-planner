@@ -4,6 +4,7 @@
 
 #include "feature/MuscleUse/MuscleUse.h"
 
+using std::cin;
 using std::cout;
 using std::endl;
 
@@ -19,15 +20,20 @@ int main(int, char**) {
         {"Exercise2", vector<Muscle>({muscles[0]})}
     });
 
-    cout << "Unused muscles: " << endl;
-    vector<Muscle> unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
-    for(vector<Muscle>::iterator it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
-        cout << it->name << endl;
+    string command;
+    cin >> command;
 
-    cout << "\nUsed muscles: " << endl;
-    vector<Muscle> usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
-    for(vector<Muscle>::iterator it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
-        cout << it->name << endl;
+    if(command == "unused") {
+        cout << "Unused muscles: " << endl;
+        vector<Muscle> unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
+        for(vector<Muscle>::iterator it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
+            cout << it->name << endl;
+    } else if (command == "used") {
+        cout << "\nUsed muscles: " << endl;
+        vector<Muscle> usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
+        for(vector<Muscle>::iterator it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
+            cout << it->name << endl;
+    } else cout << "Unknown" << endl;
 
     return EXIT_SUCCESS;
 }
