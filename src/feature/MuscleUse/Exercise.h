@@ -10,5 +10,5 @@ struct Muscle;
 
 struct Exercise {
     string name;
-    vector<Muscle> exercisedMuscles;
+    vector<string> exercisedMuscleNames;
 };

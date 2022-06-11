@@ -3,9 +3,9 @@
 bool MuscleUse::IsMuscleUsed(Exercise& exercise, Muscle& muscle) {
     bool isMuscleUsed = false;
 
-    vector<Muscle> muscles = exercise.exercisedMuscles;
-    for(vector<Muscle>::iterator it = muscles.begin(); it != muscles.end(); ++it)
-        if(it->name == muscle.name) isMuscleUsed = true;
+    vector<string> muscleNames = exercise.exercisedMuscleNames;
+    for(vector<string>::iterator it = muscleNames.begin(); it != muscleNames.end(); ++it)
+        if(*it == muscle.name) isMuscleUsed = true;
 
     return isMuscleUsed;
 }

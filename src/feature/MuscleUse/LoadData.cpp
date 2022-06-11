@@ -16,6 +16,9 @@ vector<Exercise> LoadData::LoadExercises(string fileName) {
     for(auto& exerciseNode : exercisesJson["exercises"]) {
         auto exercise = Exercise();
         exercise.name = exerciseNode["name"].get<string>();
+        for(auto muscleName : exerciseNode["exercisedMuscles"])
+            exercise.exercisedMuscleNames.push_back(muscleName.get<string>());
+
         exercises.push_back(exercise);
     }
 
