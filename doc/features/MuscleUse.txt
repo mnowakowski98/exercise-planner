@@ -1,0 +1,21 @@
+Scenario: Read exercise list from file
+Given an exercise list file
+When I run the app
+Then the exercise list file is loaded
+
+Scenario: Read muscle list from file
+Given a muscle list file
+When I run the app
+Then the muscle list file is loaded
+
+Scenario: Find unused muscles
+Given a list of muscles
+    And a list of exercises
+When I run "unused"
+Then the muscles not used in any exercises are displayed
+
+Scenario: Find used muscles
+Given a list of muscles
+    And a list of exercises
+When I run "used"
+Then the muscles used in exercises are displayed
