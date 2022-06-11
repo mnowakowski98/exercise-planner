@@ -7,7 +7,7 @@ using json = nlohmann::json;
 using std::ifstream;
 
 vector<Exercise> LoadData::LoadExercises(string fileName) {
-    vector<Exercise> exercises = vector<Exercise>();
+    auto exercises = vector<Exercise>();
 
     ifstream exercisesFile(fileName);
 
@@ -28,7 +28,7 @@ vector<Exercise> LoadData::LoadExercises(string fileName) {
 }
 
 vector<Muscle> LoadData::LoadMuscles(string fileName) {
-    vector<Muscle> muscles = vector<Muscle>();
+    auto muscles = vector<Muscle>();
 
     ifstream musclesFile(fileName);
 

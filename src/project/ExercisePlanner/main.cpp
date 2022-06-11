@@ -10,12 +10,6 @@ using std::cout;
 using std::endl;
 
 int main(int, char**) {
-    // vector<Muscle> muscles = vector<Muscle>({
-    //     {"Muscle1"},
-    //     {"Muscle2"},
-    //     {"Muscle3"}
-    // });
-
     auto muscles = LoadData::LoadMuscles("muscles.json");
 
     auto exercises = LoadData::LoadExercises("exercises.json");
@@ -25,13 +19,13 @@ int main(int, char**) {
 
     if(command == "unused") {
         cout << "Unused muscles: " << endl;
-        vector<Muscle> unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
-        for(vector<Muscle>::iterator it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
+        auto unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
+        for(auto it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
             cout << it->name << endl;
     } else if (command == "used") {
         cout << "\nUsed muscles: " << endl;
-        vector<Muscle> usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
-        for(vector<Muscle>::iterator it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
+        auto usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
+        for(auto it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
             cout << it->name << endl;
     } else cout << "Unknown" << endl;
 
