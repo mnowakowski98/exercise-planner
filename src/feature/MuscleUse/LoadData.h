@@ -3,7 +3,9 @@
 #include "Exercise.h"
 #include "Muscle.h"
 
-namespace LoadData {
-    vector<Exercise> LoadExercises(string fileName);
-    vector<Muscle> LoadMuscles(string fileName);
+namespace MuscleUse {
+    namespace LoadData {
+        vector<Exercise> LoadExercises(string fileName);
+        vector<Muscle> LoadMuscles(string fileName);
+    }
 }

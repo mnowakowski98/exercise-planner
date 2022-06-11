@@ -1,4 +1,3 @@
-#include <cstdlib>
 #include <iostream>
 #include <vector>
 
@@ -8,6 +7,8 @@
 using std::cin;
 using std::cout;
 using std::endl;
+
+using namespace MuscleUse;
 
 int main(int, char**) {
     auto muscles = LoadData::LoadMuscles("muscles.json");
@@ -19,12 +20,12 @@ int main(int, char**) {
 
     if(command == "unused") {
         cout << "Unused muscles: " << endl;
-        auto unusedMuscles = MuscleUse::GetUnusedMuscles(exercises, muscles);
+        auto unusedMuscles = GetUnusedMuscles(exercises, muscles);
         for(auto it = unusedMuscles.begin(); it != unusedMuscles.end(); ++it)
             cout << it->name << endl;
     } else if (command == "used") {
         cout << "\nUsed muscles: " << endl;
-        auto usedMuscles = MuscleUse::GetUsedMuscles(exercises, muscles);
+        auto usedMuscles = GetUsedMuscles(exercises, muscles);
         for(auto it = usedMuscles.begin(); it != usedMuscles.end(); ++it)
             cout << it->name << endl;
     } else cout << "Unknown" << endl;
