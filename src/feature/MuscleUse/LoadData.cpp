@@ -26,3 +26,21 @@ vector<Exercise> LoadData::LoadExercises(string fileName) {
 
     return exercises;
 }
+
+vector<Muscle> LoadData::LoadMuscles(string fileName) {
+    vector<Muscle> muscles = vector<Muscle>();
+
+    ifstream musclesFile(fileName);
+
+    json musclesJson;
+    musclesFile >> musclesJson;
+    for(auto& muscleNode : musclesJson["muscles"]) {
+        auto muscle = Muscle();
+        muscle.name = muscleNode["name"].get<string>();
+        muscles.push_back(muscle);
+    }
+
+    musclesFile.close();
+
+    return muscles;
+}

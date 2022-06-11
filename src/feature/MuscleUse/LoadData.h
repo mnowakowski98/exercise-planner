@@ -5,4 +5,5 @@
 
 namespace LoadData {
     vector<Exercise> LoadExercises(string fileName);
+    vector<Muscle> LoadMuscles(string fileName);
 }

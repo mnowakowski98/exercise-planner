@@ -10,16 +10,13 @@ using std::cout;
 using std::endl;
 
 int main(int, char**) {
-    vector<Muscle> muscles = vector<Muscle>({
-        {"Muscle1"},
-        {"Muscle2"},
-        {"Muscle3"}
-    });
-
-    // vector<Exercise> exercises = vector<Exercise>({
-    //     {"Exercise1", vector<Muscle>({muscles[0], muscles[2]})},
-    //     {"Exercise2", vector<Muscle>({muscles[0]})}
+    // vector<Muscle> muscles = vector<Muscle>({
+    //     {"Muscle1"},
+    //     {"Muscle2"},
+    //     {"Muscle3"}
     // });
+
+    auto muscles = LoadData::LoadMuscles("muscles.json");
 
     auto exercises = LoadData::LoadExercises("exercises.json");
 
