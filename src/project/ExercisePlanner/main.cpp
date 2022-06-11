@@ -3,6 +3,7 @@
 #include <vector>
 
 #include "feature/MuscleUse/MuscleUse.h"
+#include "feature/MuscleUse/LoadData.h"
 
 using std::cin;
 using std::cout;
@@ -15,10 +16,12 @@ int main(int, char**) {
         {"Muscle3"}
     });
 
-    vector<Exercise> exercises = vector<Exercise>({
-        {"Exercise1", vector<Muscle>({muscles[0], muscles[2]})},
-        {"Exercise2", vector<Muscle>({muscles[0]})}
-    });
+    // vector<Exercise> exercises = vector<Exercise>({
+    //     {"Exercise1", vector<Muscle>({muscles[0], muscles[2]})},
+    //     {"Exercise2", vector<Muscle>({muscles[0]})}
+    // });
+
+    auto exercises = LoadData::LoadExercises("exercises.json");
 
     string command;
     cin >> command;
