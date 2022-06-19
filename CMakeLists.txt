@@ -4,7 +4,7 @@ project(ExercisePlanner VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-include_directories(src include)
+include_directories(src)
 
 add_library(MuscleUse src/feature/MuscleUse/MuscleUse.cpp src/feature/MuscleUse/LoadData.cpp)
 

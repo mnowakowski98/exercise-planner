@@ -1,7 +1,7 @@
 #include "LoadData.h"
 
 #include <fstream>
-#include <nlohmann/json.hpp>
+#include <foundation/nlohmann/json.hpp>
 
 using json = nlohmann::json;
 using std::ifstream;
