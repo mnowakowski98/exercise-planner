@@ -1,0 +1,11 @@
+Scenario: Input a command
+Given the program is running
+Then I am prompted for a command
+
+Scenario: Use mutliple commands
+Given a command has completed
+Then I am prompted for another command
+
+Scenario: Exit program
+When I run "exit"
+Then the program exits
