@@ -1,6 +1,8 @@
 Scenario: Input a command
 Given the program is running
-Then I am prompted for a command
+Then I am prompted for a command*
+
+*Command prompt is "Command:"
 
 Scenario: Use mutliple commands
 Given a command has completed
